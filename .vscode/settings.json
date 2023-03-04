@@ -1,0 +1,84 @@
+{
+  // editor
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.rulers": [120],
+  // errorLens
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.statusBarIconsEnabled": true,
+  "errorLens.gutterIconSet": "defaultOutline",
+  "errorLens.followCursor": "activeLine",
+  // todo-tree
+  "todo-tree.general.statusBar": "tags",
+  "todo-tree.general.statusBarClickBehaviour": "reveal",
+  "todo-tree.regex.enableMultiLine": true,
+  // See https://github.com/Gruntfuggly/todo-tree/issues/255
+  "todo-tree.regex.regex": "(?:(?://|#|<!--|;|/\\*\\*?|\\*)\\s*($TAGS)|^\\s*- \\[ \\])",
+  "todo-tree.highlights.highlightDelay": 0,
+  "todo-tree.general.tags": ["TODO", "ATTENTION"],
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "icon": "question",
+      "foreground": "#000",
+      "background": "#aa0",
+      "iconColour": "#aa0",
+      "gutterIcon": true,
+      "type": "whole-line"
+    },
+    "ATTENTION": {
+      "icon": "info",
+      "foreground": "#fff",
+      "background": "#a00",
+      "iconColour": "#a00",
+      "gutterIcon": true,
+      "type": "whole-line"
+    }
+  },
+  // typescript
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.referencesCodeLens.enabled": true,
+  // eslint
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "warn"
+    }
+  ],
+  // cSpell
+  "cSpell.diagnosticLevel": "Warning",
+  "cSpell.enabledLanguageIds": [
+    "css",
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "yml",
+    "mdx"
+  ],
+  // files
+  "files.exclude": {
+    ".git": true,
+    ".coverage": true,
+    ".yarn": true,
+    ".jscpd": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "yarn.lock": true
+  },
+  // markdown
+  "markdown.validate.enabled": true,
+  // json
+  "json.schemas": [
+    {
+      "fileMatch": ["*tsconfing*.json", "tsconfig/*.json"],
+      "url": "https://json.schemastore.org/tsconfig"
+    }
+  ]
+}

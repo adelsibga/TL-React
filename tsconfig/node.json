@@ -1,0 +1,10 @@
+{
+  "extends": "./common",
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "composite": true
+  },
+  "ts-node": { "esm": true, "experimentalSpecifierResolution": "node" }
+}

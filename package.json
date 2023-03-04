@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "scripts": {
+    "words": "yarn workspace words dev",
+    "words-build": "yarn workspace words build",
+    "words-preview": "yarn workspace words preview",
+    "lint": "run-s 'lint:*'",
+    "lint:prettier": "cfonts '- prettier' -f console -g blue,red -s && prettier --check --loglevel warn .",
+    "lint:cspell": "cfonts '- cspell' -f console -g blue,red -s && cspell --no-progress --no-summary .",
+    "lint:eslint": "cfonts '- eslint' -f console -g blue,red -s && eslint ."
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-jss": "^10.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.3",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "@vitejs/plugin-react-swc": "^3.2.0",
+    "cfonts": "^3.1.1",
+    "cspell": "^6.27.0",
+    "eslint": "^8.35.0",
+    "eslint-config-words": "workspace:*",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4"
+  },
+  "packageManager": "yarn@3.4.1"
+}
