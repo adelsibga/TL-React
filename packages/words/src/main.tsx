@@ -1,13 +1,13 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom/client";
-import App from "./App";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/client';
+import App from './App';
 
-const root = document.querySelector("#root");
+const root = document.querySelector('#root');
 if (root !== null) {
   // eslint-disable-next-line functional/no-expression-statements
   ReactDOM.createRoot(root).render(
     <React.StrictMode>
-      <App />
+      <App/>
     </React.StrictMode>
   );
 }

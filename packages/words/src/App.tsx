@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { createUseStyles } from "react-jss";
-import { Button, Colors, FontWeight } from "words-ui";
+import {useState} from 'react';
+import {createUseStyles} from 'react-jss';
+import {Button, Colors, FontWeight} from 'words-ui';
 
 const useStyles = createUseStyles({
-  text: { fontWeight: FontWeight.bold, color: Colors.info },
+  text: {color: Colors.info, fontWeight: FontWeight.bold},
 });
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
       <p className={classes.text}>You clicked {count} times</p>
-      <Button onClick={onClick} text="Click on me" />
+      <Button onClick={onClick} text="Click on me"/>
     </>
   );
 };
