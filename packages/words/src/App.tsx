@@ -31,6 +31,7 @@ const App = () => {
   const fillDictionary = () => setCount(count + 1);
   const checkKnowledge = () => setCount(count + 2);
 
+  //TODO: заменять содержимое headerText в зависимости от содержания страницы
   return (
     <>
       <Header headerText="Выберите режим "/>

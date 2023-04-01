@@ -5,7 +5,7 @@ import type React from 'react';
 
 const useStyles = createUseStyles({
   //TODO: разобраться с props для кнопки -> различные события при onClick и различные стили из вне компонента
-  button: (props) => ({
+  button: () => ({
     backgroundColor: '#1565C0',
     border: 'none',
     borderRadius: 4,
@@ -30,6 +30,7 @@ const useStyles = createUseStyles({
 type ButtonProps = Readonly<{
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   text: string;
+
 }>;
 
 export const Button = ({text, onClick}: ButtonProps) => {
