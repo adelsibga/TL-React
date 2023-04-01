@@ -1,17 +1,17 @@
-import {createUseStyles} from 'react-jss';
-import {FontWeight} from '../theme';
+import { createUseStyles } from "react-jss";
+import { FontWeight } from "../theme";
 // eslint-disable-next-line import/default
-import type React from 'react';
+import { MouseEvent } from "react";
 
 const useStyles = createUseStyles({
   //TODO: разобраться с props для кнопки -> различные события при onClick и различные стили из вне компонента
   button: () => ({
-    backgroundColor: '#1565C0',
-    border: 'none',
+    backgroundColor: "#1565C0",
+    border: "none",
     borderRadius: 4,
-    color: '#FFFFFF',
-    cursor: 'pointer',
-    fontFamily: 'Open Sans',
+    color: "#FFFFFF",
+    cursor: "pointer",
+    fontFamily: "Open Sans",
     fontSize: 14,
     fontWeight: FontWeight.bold,
     letterSpacing: 0.5,
@@ -23,21 +23,22 @@ const useStyles = createUseStyles({
       bottom: 10,
       left: 9,
     },
-    textTransform: 'uppercase',
+    textTransform: "uppercase",
   }),
 });
 
 type ButtonProps = Readonly<{
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
   text: string;
-
+  className: string;
 }>;
 
-export const Button = ({text, onClick}: ButtonProps) => {
-  const classes = useStyles()
+export const Button = ({ text, onClick, className }: ButtonProps) => {
+  const classes = useStyles();
 
   return (
-    <button className={classes.button} onClick={onClick} type="button">
+    /* для конкатинации css классов лучше использовать https://www.npmjs.com/package/clsx */
+    <button className={`${classes.button} ${className}`} onClick={onClick} type="button">
       {text}
     </button>
   );

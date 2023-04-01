@@ -1,28 +1,28 @@
-import {useState} from 'react';
-import {createUseStyles} from 'react-jss';
-import {Header, Button, Colors, FontWeight} from 'words-ui';
+import { useState } from "react";
+import { createUseStyles } from "react-jss";
+import { Button, Colors, FontWeight, Header } from "words-ui";
 
 const useStyles = createUseStyles({
-  '@global': {
-    '*': {
-      boxSizing: 'border-box',
+  "@global": {
+    "*": {
+      boxSizing: "border-box",
       margin: 0,
-      padding: 0
+      padding: 0,
     },
     body: {
-      backgroundColor: '#eff2f5',
+      backgroundColor: "#eff2f5",
       padding: {
         top: 40, // eslint-disable-next-line sort-keys
         right: 32, // eslint-disable-next-line sort-keys
         bottom: 40,
         left: 32,
       },
-    }
+    },
   },
   text: {
     color: Colors.info,
-    fontWeight: FontWeight.bold
-  }
+    fontWeight: FontWeight.bold,
+  },
 });
 
 const App = () => {
@@ -32,11 +32,12 @@ const App = () => {
   const checkKnowledge = () => setCount(count + 2);
 
   //TODO: заменять содержимое headerText в зависимости от содержания страницы
+  // Должно управляться state management-ом
   return (
     <>
-      <Header headerText="Выберите режим "/>
-      <Button onClick={fillDictionary} text="Заполнить словарь"/>
-      <Button onClick={checkKnowledge} text="Проверить знания"/>
+      <Header headerText="Выберите режим " />
+      <Button onClick={fillDictionary} text="Заполнить словарь" />
+      <Button onClick={checkKnowledge} text="Проверить знания" />
       <p className={classes.text}>You clicked {count} times</p>
     </>
   );
