@@ -1,16 +1,17 @@
-import { useState } from "react";
-import { createUseStyles } from "react-jss";
-import { Button, Colors, FontWeight, Header } from "words-ui";
+import { useState } from 'react';
+import { createUseStyles } from 'react-jss';
+import { Button, Colors, Header } from 'words-ui';
+import { pagesList } from './types/Pages';
 
 const useStyles = createUseStyles({
-  "@global": {
-    "*": {
-      boxSizing: "border-box",
+  '@global': {
+    '*': {
+      boxSizing: 'border-box',
       margin: 0,
       padding: 0,
     },
     body: {
-      backgroundColor: "#eff2f5",
+      backgroundColor: Colors.globalBackground,
       padding: {
         top: 40, // eslint-disable-next-line sort-keys
         right: 32, // eslint-disable-next-line sort-keys
@@ -19,10 +20,18 @@ const useStyles = createUseStyles({
       },
     },
   },
-  text: {
-    color: Colors.info,
-    fontWeight: FontWeight.bold,
+  checkKnowledgeBtn: {
+    backgroundColor: Colors.white,
+    borderColor: Colors.border,
+    borderRadius: 4,
+    borderStyle: 'solid',
+    borderWidth: 1,
+    color: Colors.blue,
   },
+  fillDictionaryBtn: {
+    backgroundColor: Colors.blue,
+    color: Colors.white,
+  }
 });
 
 const App = () => {
@@ -35,10 +44,10 @@ const App = () => {
   // Должно управляться state management-ом
   return (
     <>
-      <Header headerText="Выберите режим " />
-      <Button onClick={fillDictionary} text="Заполнить словарь" />
-      <Button onClick={checkKnowledge} text="Проверить знания" />
-      <p className={classes.text}>You clicked {count} times</p>
+      <Header headerText="Выберите режим"/>
+      <Button className={classes.fillDictionaryBtn} onClick={fillDictionary} text="Заполнить словарь"/>
+      <Button className={classes.checkKnowledgeBtn} onClick={checkKnowledge} text="Проверить знания"/>
+      <p>You clicked {count} times</p>
     </>
   );
 };

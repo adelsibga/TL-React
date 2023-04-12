@@ -1,13 +1,10 @@
-import { createUseStyles } from "react-jss";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars,import/default
-import { FontWeight } from "../theme";
+import { createUseStyles } from 'react-jss';
+import { FontWeight, Colors } from '../theme';
 
 const useStyles = createUseStyles({
   pageTitle: {
-    //TODO: вынести в цвет в константы
-    // Да, лучше вынести в палитру
-    color: "#364963",
-    fontFamily: "Roboto Condensed",
+    color: Colors.title,
+    fontFamily: 'Roboto Condensed',
     fontSize: 48,
     fontWeight: FontWeight.normal,
     lineHeight: 1,
